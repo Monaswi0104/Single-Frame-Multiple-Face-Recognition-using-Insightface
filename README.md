@@ -204,6 +204,7 @@ Recognition generates annotated images with bounding boxes, names, and confidenc
 ## 👥 Authors
 
 - **Monaswi Kumar Bharadwaj** — [Monaswi0104](https://github.com/Monaswi0104)
+- **Arijit Banik** — [arijitb17](https://github.com/arijitb17)
 
 ---
 
