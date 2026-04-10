@@ -4,9 +4,9 @@ import imgaug.augmenters as iaa
 import numpy as np
 
 # Paths
-INPUT_PATH = "mini-project-main/dataset"
-OUTPUT_PATH = "mini-project-main/augmented-dataset"
-NUM_AUGMENTATIONS = 20
+INPUT_PATH = "/Users/monaswi/Documents/mini-project/dataset"
+OUTPUT_PATH = "/Users/monaswi/Documents/mini-project/augmented-dataset"
+NUM_AUGMENTATIONS = 10
 
 # Augmentation pipeline with color transformations
 augmenter = iaa.Sequential([
