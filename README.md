@@ -66,8 +66,8 @@ mini-project/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Monaswi0104/Mini_Project.git
-cd Mini_Project
+git clone https://github.com/Monaswi0104/Single-Frame-Multiple-Face-Recognition-using-Insightface.git
+cd Single-Frame-Multiple-Face-Recognition-using-Insightface
 ```
 
 ### 2. Set Up Virtual Environment
