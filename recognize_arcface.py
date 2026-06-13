@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 # Define Paths for Input and Output
 TEST_FOLDER = "test-images"
-OUTPUT_FOLDER = "output"
+OUTPUT_FOLDER = "output1"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Load Stored Face Embeddings
@@ -82,7 +82,7 @@ for image_name in os.listdir(TEST_FOLDER):
 
                 # ArcFace embeddings are very discriminative;
                 # 0.55 is a good threshold (adjust between 0.45 - 0.65 depending on strictness)
-                if similarity > best_similarity and similarity > 0.45:
+                if similarity > best_similarity and similarity > 0.55:
                     best_match = name.capitalize()
                     best_similarity = similarity
 
