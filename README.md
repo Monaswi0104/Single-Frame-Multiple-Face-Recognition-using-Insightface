@@ -66,8 +66,8 @@ mini-project/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Monaswi0104/Mini_Project.git
-cd Mini_Project
+git clone https://github.com/Monaswi0104/Single-Frame-Multiple-Face-Recognition-using-Insightface.git
+cd Single-Frame-Multiple-Face-Recognition-using-Insightface
 ```
 
 ### 2. Set Up Virtual Environment
@@ -204,6 +204,7 @@ Recognition generates annotated images with bounding boxes, names, and confidenc
 ## 👥 Authors
 
 - **Monaswi Kumar Bharadwaj** — [Monaswi0104](https://github.com/Monaswi0104)
+- **Arijit Banik** — [arijitb17](https://github.com/arijitb17)
 
 ---
 
