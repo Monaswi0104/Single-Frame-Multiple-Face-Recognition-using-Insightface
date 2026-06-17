@@ -10,8 +10,8 @@ from PIL import Image, ImageDraw, ImageFont
 import seaborn as sns
 
 # Paths
-TEST_FOLDER = "/Users/monaswi/Documents/mini-project/test-images"
-OUTPUT_FOLDER = "/Users/monaswi/Documents/mini-project/output2"
+TEST_FOLDER = "test-images"
+OUTPUT_FOLDER = "output_antelopev2"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Augmentation setup (not used here but imported)
@@ -28,8 +28,8 @@ for name in known_faces:
     known_faces[name] /= np.linalg.norm(known_faces[name])
 
 # Initialize ArcFace Model
-app = FaceAnalysis(name='antelopev2', providers=['CPUExecutionProvider'])
-app.prepare(ctx_id=0)
+app = FaceAnalysis(name='antelopev2', providers=['CoreMLExecutionProvider', 'CPUExecutionProvider'])
+app.prepare(ctx_id=0, det_thresh=0.25)
 
 # Cosine similarity function
 def cosine_similarity(a, b):

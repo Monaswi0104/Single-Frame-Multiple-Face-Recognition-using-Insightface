@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 # The `test-images` folder contains images to be processed.  
 # The `output` folder stores the annotated images after face recognition.  
 TEST_FOLDER = "test-images"
-OUTPUT_FOLDER = "output"
+OUTPUT_FOLDER = "output_buffalo_l"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Load Stored Face Embeddings  
@@ -24,9 +24,10 @@ for name in known_faces:
 
 # Initialize Face Recognition Model  
 # The InsightFace ArcFace model (`buffalo_l`) is used for face detection and feature extraction.  
-# The model runs on the CPU for compatibility.  
-app = FaceAnalysis(name='buffalo_l', providers=['CPUExecutionProvider'])
-app.prepare(ctx_id=0)
+# The model utilizes the CoreML Execution Provider to accelerate processing on the M-series GPU/Neural Engine.
+app = FaceAnalysis(name='buffalo_l', providers=['CoreMLExecutionProvider', 'CPUExecutionProvider'])
+# det_thresh is lowered to detect harder-to-see faces. det_size is removed to prevent CoreML static shape crash on Apple Silicon.
+app.prepare(ctx_id=0, det_thresh=0.25)
 
 # Define Function for Cosine Similarity Calculation  
 # Cosine similarity measures the similarity between two face embeddings.  
@@ -77,7 +78,7 @@ for image_name in os.listdir(TEST_FOLDER):
             similarity = cosine_similarity(embedding, known_emb)
 
             # Accept match if similarity is above 0.55 and the person is not already detected  
-            if similarity > best_similarity and similarity > 0.50 and name not in recognized_names:
+            if similarity > best_similarity and similarity > 0.45 and name not in recognized_names:
                 best_match = name.capitalize()
                 best_similarity = similarity
 
